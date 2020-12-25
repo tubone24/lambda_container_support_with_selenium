@@ -11,6 +11,6 @@ password = sys.argv[2]
 response = client.encrypt(
     KeyId=keyId,
     Plaintext=password.encode(),
-)['CiphertextBlob']
+)["CiphertextBlob"]
 
-print(base64.b64encode(response).decode('utf-8'))
+print(base64.b64encode(response).decode("utf-8"))

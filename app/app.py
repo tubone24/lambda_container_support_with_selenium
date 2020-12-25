@@ -76,6 +76,8 @@ def handler(event, context):
 
     wait.until(expected_conditions.visibility_of_element_located((By.CLASS_NAME, "p-message_pane")))
 
+    print(f"PageTitle {d.title}")
+
     day_button_elements = d.find_elements_by_class_name("c-button-unstyled")
 
     days_pickers = [x.text for x in day_button_elements]
@@ -87,8 +89,8 @@ def handler(event, context):
         data = {
             "token": SLACK_TOKEN,
             "channels": SLACK_CHANNEL_ID,
-            "title": "attend",
-            "initial_comment": "本日のattendです"
+            "title": "attend bot",
+            "initial_comment": f"({d.title})のattend状況です"
         }
         files = {"file": open(FILENAME, "rb")}
         print(f"Upload To Slack")
@@ -105,9 +107,9 @@ def handler(event, context):
 
 
 def decode_slack_password():
-    decoded = kms.decrypt(CiphertextBlob=b64decode(SLACK_PASSWORD))['Plaintext']
+    decoded = kms.decrypt(CiphertextBlob=b64decode(SLACK_PASSWORD))["Plaintext"]
     return decoded.decode(encoding="utf-8")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     handler(None, None)
