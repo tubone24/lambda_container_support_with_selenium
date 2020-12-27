@@ -26,7 +26,8 @@ So, if we take a screenshot of the secure Slack and post it to the Slack we usua
 
 ![img](https://i.imgur.com/odKSxHU.png)
 
-[More information? Go to my Article: ]()
+[More information? Go to my Article: Lambda – Container Image Supportを使ってAlpineからSeleniumが動くコンテナを作ってTerraformで当てる
+](https://blog.tubone-project24.xyz/2020/12/25/selenium-lambda-container)
 
 ### Architects
 
@@ -79,6 +80,13 @@ $ vi terraform/env.tfvars
 
 $ cp terraform/ecr/tfvars.tfvars.tpl env.tfvars
 $ vi terraform/ecr/env.tfvars
+```
+
+SLACK_PASSWORD must be encrypted using AWS KMS, so you need to use kms_encrypt.py scripts.
+
+```
+pip install -r requirements.txt
+python scripts/kms_encrypt.py keyId password
 ```
 
 ### Build Container Image
