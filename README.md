@@ -26,7 +26,7 @@ So, if we take a screenshot of the secure Slack and post it to the Slack we usua
 
 ![img](https://i.imgur.com/odKSxHU.png)
 
-[More information? Go to my Article: Lambda – Container Image Supportを使ってAlpineからSeleniumが動くコンテナを作ってTerraformで当てる
+More information? Go to my Article: [Lambda – Container Image Supportを使ってAlpineからSeleniumが動くコンテナを作ってTerraformで当てる
 ](https://blog.tubone-project24.xyz/2020/12/25/selenium-lambda-container)
 
 ### Architects
