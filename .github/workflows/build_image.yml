@@ -1,0 +1,18 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: build Docker image
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: docker login
+        run: docker login docker.pkg.github.com -u tubone24 -p ${{ secrets.GITHUB_TOKEN }}
+      - name: docker build
+        run: docker build -t docker.pkg.github.com/lambda_container_support_with_selenium/selenium .
+      - name: docker push
+        run: docker push docker.pkg.github.com/lambda_container_support_with_selenium/selenium
