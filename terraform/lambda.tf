@@ -4,7 +4,6 @@ resource "aws_lambda_function" "attend_selenium" {
   function_name = "attend_selenium"
   role = var.role
   description = "Send a screen capture for your other slack attend to your slack channel"
-  # handler = "app.handler"
   timeout = 300
   memory_size = 1024
 
