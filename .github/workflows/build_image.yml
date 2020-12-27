@@ -13,6 +13,6 @@ jobs:
       - name: docker login
         run: docker login docker.pkg.github.com -u tubone24 -p ${{ secrets.GITHUB_TOKEN }}
       - name: docker build
-        run: docker build -t docker.pkg.github.com/lambda_container_support_with_selenium/selenium .
+        run: docker build -t docker.pkg.github.com/tubone24lambda_container_support_with_selenium/selenium .
       - name: docker push
         run: docker push docker.pkg.github.com/tubone24/lambda_container_support_with_selenium/selenium
