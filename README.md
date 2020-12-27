@@ -97,7 +97,7 @@ The following commands should be executed in the project root.
 make build-push-image ENV=env
 ```
 
-Or builded image from GitHub packages
+Or built image from GitHub packages
 
 ```
 docker pull docker.pkg.github.com/tubone24/lambda_container_support_with_selenium/selenium:latest
